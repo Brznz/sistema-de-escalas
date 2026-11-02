@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-militar-50: #f4f6f0;
+  --color-militar-100: #e5e9dc;
+  --color-militar-200: #ccd4bd;
+  --color-militar-300: #adbca0;
+  --color-militar-400: #899f7d;
+  --color-militar-500: #69815c;
+  --color-militar-600: #516646;
+  --color-militar-700: #405037;
+  --color-militar-800: #34412e;
+  --color-militar-900: #2c3727;
+  --color-militar-950: #161c13;
+
+  --color-navy-850: #0f172a;
+  --color-navy-900: #0b1120;
+  --color-navy-950: #070b14;
+
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    background-color: #020617;
+    background-image:
+      radial-gradient(circle at 50% 0%, rgba(81, 102, 70, 0.14) 0%, transparent 55%),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.4) 1px, transparent 1px),
+      linear-gradient(to right, rgba(15, 23, 42, 0.4) 1px, transparent 1px);
+    background-size: 100% 100%, 32px 32px, 32px 32px;
+    color: #f8fafc;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Print Optimization */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-card {
+    border: 1px solid #000 !important;
+    background: transparent !important;
+    color: #000 !important;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}

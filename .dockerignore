@@ -1,0 +1,8 @@
+node_modules
+dist
+data/backups
+.agents
+skills-lock.json
+.git
+*.log
+*.zip
